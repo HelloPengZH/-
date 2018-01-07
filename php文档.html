@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>php</title>
+
+    <style>
+        body {
+            background-color: #EEEEEE;
+        }
+
+        p {
+            font: normal 700 15px/2em "幼圆";
+        }
+
+        i {
+            display: inline-block;
+            height: 100%;
+            width: 100px;
+            font-style: normal;
+            background-color: #e6e6e6;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h3>php基础语法</h3>
+    <div>
+        <p><i>定义变量</i> 没有声明 --" $(变量名) "-- 表示一个变量 取用的时候 $(变量名) 取用 </p>
+
+        <p><i>数据类型</i> 整型int，浮点型float，字符串型string，布尔型booling，空型null，数组型arr，对象型obj </p>
+
+        <p><i>字符串拼接</i> 类似于js中的" + " 替代为字符 " . " </p>
+
+        <p><i>引号问题</i> '不可以被解析 只能作为字符串使用 ' "里面的变量可被解析 变量将直接变成值的形式" </p>
+
+        <p><i>打印变量</i> 方式1 : var_dump + $变量名 --:--方式2 : print_r($变量名); </p>
+
+        <p><i>foreach循环</i> 可以取到关联数组与非关数组李面的所有对象 比较类似于 for in 循环 使用方式 foreach( $( 需要遍历的数组对象名称 ) as $(
+            自定义的名称表示取到的值的以自定义value为例 ) ) { $(value: 表示数组中的一个值) 表示其中的每一个的值 }</p>
+
+        <p><i>$json_encode(变量名)</i> 将变量转换成json字符串形式</p>
+        <p><i>$json_decode(变量名)</i> json字符串转换成变量</p>
+
+
+        <p><i> $_SERVER </i> 获取url 地址 数组形式 </p>
+        <p><i> $_SERVER['REQUEST_URL'] </i> 属性 比较简单可以拿到所有的 url 数据. 我们不使用它, 作为练习自己完成</p>
+        <p><i> $_SERVER['PATH_INFO'] </i> 属性 只会拿到 index.php 后面的内容, 同时如果页面没有编写任何文件路径, 那么就不存在该属性</p>
+
+
+        <p><i> array_key_exists('属性', 数组)</i> 判断 数组里面有没有这条属性 </p>
+        <p><i> strlen('str')</i> 获取数组长度 -> 返回值是num</p>
+
+
+        <p><i> substr('str',num )</i> 对字符串 移除几个字符 -> 返回值是字符串</p>
+        <p><i> explode('/','str')</i> 对str 以 / 符进行分割 类似于js中的split -> 返回值是数组(伪)</p>
+
+
+
+
+    </div>
+
+
+    <div>
+        <h4> 使用未详细说明代码 </h4>
+        <p><i>内容格式中字体编码utf-8</i> header("Content-Type:text/plain; charset=utf-8");</p>
+
+    </div>
+</div>
+</body>
+</html>

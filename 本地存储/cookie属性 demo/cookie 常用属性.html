@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>js中的设置 cookie 存取</h4>
+<ul>
+    <li>存 :::: document.cookie= 'str' // str 为键值对类型 为 key = value</li>
+    <li>取 :::: console.log ( )</li>
+</ul>
+
+
+<h4>cookie 属性</h4>
+cookie 中的字符串 跟随属性 添加在 str 需要保存的数据后面 <br>
+<ol>
+    <li>str + '; exprise ;'+ new Date('2088-8-8') 时间 --->表示含义 在 2088年8月8号之在此站点不失效</li>
+    <li>str + '; max-age + num ;'--->表示在 num秒后失效</li>
+    <li>str + '; path + 路径;' --->表示在路径对应的文件夹下面均可使用 此 cookie ;即在 路径/ 下面的任意网页均可发那个文</li>
+    <li>str + '; domain + 域名 ;'---> 在多服务器时 这玩意 可以共享主机 <==> path 可实现 域名 / 路径下的cookie值保存 如 p.cc /meet 可访问 在 p.cc
+        中保存的cookie 值:: domain 可实现 ###/域名 比如 codol.qq.com等2级域名中 对 qq 登录 cookie 的保存及访问
+    </li>
+    <li>str + '; secure=true;' ---> 默认值 为 false true 时只支持https提交</li>
+</ol>
+
+<h4>jQuery cookie 插件使用 </h4>
+
+<ul>
+    <li> $.cookie('key' , 'valeue' , 属性 ) 属性 是以键值对的形式 添加的 如 : {expires: 7} </li>
+    <li> $.cookie () 表示 读取所有的 cookie  </li>
+    <li> $.cookie ('name') 表示 读取特定名称的 cookie</li>
+    <li> </li>
+</ul>
+
+<h4>意外事故</h4>
+<ul>
+    <li>在不同的属性间 , 调用的时候需要使用 :' ;  ': 分开</li>
+</ul>
+</body>
+<script type=text/html>
+    js中的设置 cookie 存取
+
+    存 :::: document.cookie= 'str' // str 为键值对类型 为 key = value
+    取 :::: console.log ( )
+    cookie 属性
+
+    cookie 中的字符串 跟随属性 添加在 str 需要保存的数据后面
+
+    str + '; exprise ;'+ new Date('2088-8-8') 时间 --->表示含义 在 2088年8月8号之在此站点不失效
+    str + '; max-age + num ;'--->表示在 num秒后失效
+    str + '; path + 路径;' --->表示在路径对应的文件夹下面均可使用 此 cookie ;即在 路径/ 下面的任意网页均可发那个文
+    str + '; domain + 域名 ;'---> 在多服务器时 这玩意 可以共享主机 <==> path 可实现 域名 / 路径下的cookie值保存 如 p.cc /meet 可访问 在 p.cc 中保存的cookie 值:: domain 可实现 ###/域名 比如 codol.qq.com等2级域名中 对 qq 登录 cookie 的保存及访问
+    str + '; secure=true;' ---> 默认值 为 false true 时只支持https提交
+
+
+    jQuery cookie 插件使用
+
+    $.cookie('key' , 'valeue' , 属性 ) 属性 是以键值对的形式 添加的 如 : {expires: 7}
+    $.cookie () 表示 读取所有的 cookie
+    $.cookie ('name') 表示 读取特定名称的 cookie
+    意外事故
+
+    在不同的属性间 , 调用的时候需要使用 :' ; ': 分开
+</script>
+</html>

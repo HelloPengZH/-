@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /**
+     * 循环p.each 创建对象 p.c 获取对象 通过标签 p.t 使用 及简单ajax
+     * */
+    var p = {
+        "each": function (arr, fn) {
+            if (arr.length) {
+                for (var i = 0; i < arr.length; i++) {
+                    fn(i, arr[i])
+                }
+            } else if (typeof arr === "number") {
+                for (var i = 0; i < arr; i++) {
+                    fn(i)
+                }
+            }
+        },
+        "id": function (id) {
+            return document.getElementById(id)
+        },
+        "ajax": function (mothed, adress, param, fn) {
+            var xhr
+            if (XMLHttpRequest) {
+                xhr = new XMLHttpRequest()
+            } else {
+                xhr = new ActiveXObject("Microsoft.XMLHTTP")
+            }
+            if (mothed == 'post') {
+                xhr.open(mothed, adress, true)
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+                xhr.send(param)
+            } else if (mothed == 'get') {
+                xhr.open(mothed, adress + "?" + encodeURI(param), true)
+                xhr.send(null)
+            }
+            xhr.onreadystatechange = function () {
+                if (xhr.status == 200 && xhr.readyState == 4) {
+                    var date = xhr.responseText
+                    fn(date)
+                }
+            }
+        },
+        "tt": document.getElementsByTagName,
+        "t": document.body.getElementsByTagName,
+        "c": document.createElement,
+        'q': document.querySelector,
+        'qAll': document.querySelectorAll,
+        //变量
+        "name": "Mr.Peng"
+    }
+    /**
+     *循环 及 id tag querySelector
+     * */
+    var p1 = {
+        "each": function (arr, fn) {
+            if (arr.length) {
+                for (var i = 0; i < arr.length; i++) {
+                    fn(i, arr[i])
+                }
+            } else if (typeof arr === "number") {
+                for (var i = 0; i < arr; i++) {
+                    fn(i)
+                }
+            }
+        },
+        "id": function (id) {
+            return document.getElementById(id)
+        },
+        "tt": document.getElementsByTagName,
+        "t": function (obj, tag) {
+            return obj.getElementsByTagName(tag + "")
+        },
+        "c": function (tag) {
+            return document.createElement(tag)
+        },
+        'q': function ($) {
+            return document.querySelector($)
+        },
+        'qAll': function ($) {
+            return document.querySelectorAll($)
+        },
+//        "":,
+        //变量
+        "name": "Mr.Peng"
+    }
+
+    /**
+     * 版本三 tag优化 以及 修改
+     * */
+    var p2 = {
+        "each": function (arr, fn) {
+            if (arr.length) {
+                for (var i = 0; i < arr.length; i++) {
+                    fn(i, arr[i])
+                }
+            } else if (typeof arr === "number") {
+                for (var i = 0; i < arr; i++) {
+                    fn(i)
+                }
+            }
+        },
+        "id": function (id) {
+            return document.getElementById(id)
+        },
+        "t": function (tag, dom) {
+            var m = dom || document
+            return obj.getElementsByTagName(m)
+        },
+        "cre": function (tag) {
+            return document.createElement(tag)
+        },
+        'q': function ($) {
+            return document.querySelector($)
+        },
+        'qs': function ($) {
+            return document.querySelectorAll($)
+        },
+//        "":,
+        //变量
+        "name": "Mr.Peng"
+    }
+
+
+    /**
+     * ajax 封装
+     * */
+    function ajax(obj) {
+        var inside = {
+            data: {},
+            dataType: 'text',
+            url: '#',
+            jsonp: 'callback',
+//            jsonpCallback:'',
+            success: function (data) {
+                console.log(data);
+            }
+        }
+        var xhr
+        if (XMLHttpRequest) {
+            xhr = new XMLHttpRequest()
+        } else {
+            xhr = new ActiveXObject("Microsoft.XMLHTTP")
+        }
+
+
+    }
+</script>
+<div id="box1">
+    <p class="txt1">
+        <span></span>
+    </p>
+</div>
+<script>
+
+
+</script>
+<!--最初的版本-->
+<script>
+    var p = {
+        "each": function (arr, fn) {
+            if (arr.length) {
+                for (var i = 0; i < arr.length; i++) {
+                    fn(i, arr[i])
+                }
+            } else if (typeof arr === "number") {
+                for (var i = 0; i < arr; i++) {
+                    fn(i)
+                }
+            }
+        },
+        "id": function (id) {
+            return document.getElementById(id)
+        },
+        "ajax": function (mothed, adress, param, fn) {
+            var xhr
+            if (XMLHttpRequest) {
+                xhr = new XMLHttpRequest()
+            } else {
+                xhr = new ActiveXObject("Microsoft.XMLHTTP")
+            }
+
+            if (mothed == 'post') {
+                xhr.open(mothed, adress, true)
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+                xhr.send(param)
+            } else if (mothed == 'get') {
+                xhr.open(mothed, adress + "?" + encodeURI(param), true)
+                xhr.send(null)
+            }
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var date = xhr.responseText
+                    fn(date)
+                }
+            }
+        },
+        "tt": document.getElementsByTagName,
+        "t": document.body.getElementsByTagName,
+        "c": document.createElement,
+        'q': document.querySelector,
+        'qAll': document.querySelectorAll,
+        //变量
+        "name": "Mr.Peng"
+    }
+    var ajaxFunc = function (obj) {
+        var inside = {
+            "type": 'get',
+            "url": "#",
+            "data": {"userName": "null", "passWord": ''},
+            "param": "",
+            "async": true,
+            "fn": function (data) {
+                console.log(data);
+            },
+            "dataType": 'text'
+        }
+        for (var k in obj) {
+            inside[k] = obj[k]
+        }
+        var xhr
+        if (XMLHttpRequest) {
+            xhr = new XMLHttpRequest()
+        } else {
+            xhr = new ActiveXObject("Microsoft.XMLHTTP")
+        }
+
+        if (inside.type == 'post') {
+
+            xhr.open(inside.type, inside.url, true)
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+            xhr.send(inside.param)
+
+        } else if (inside.type == 'get') {
+
+            xhr.open(inside.type, inside.url + "?" + encodeURI(inside.param), true)
+            xhr.send(null)
+
+        }
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var date = xhr.responseText
+                inside.fn(date)
+            }
+        }
+
+    }
+    console.log(p.tt.call(document, 'span'));
+</script>
+</body>
+</html>

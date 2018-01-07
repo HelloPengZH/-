@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src='../../lib/jquery/jquery.js'></script>
+    <script src='../../lib/angular/angular.js'></script>
+</head>
+<body>
+<input type="text">
+<input type="button" value='测试'>
+</body>
+<script>
+ var txt = $('input:text')[0]
+ var btn = $('input:button')[0]
+ txt.addEventListener('change', function () {
+     btn.value = txt.value
+ })
+ txt.addEventListener('keyup', function () {
+     btn.value = txt.value
+ })
+ txt.addEventListener('input', function () {
+     btn.value = txt.value
+ })
+ txt.addEventListener('focus', function () {
+     btn.value = txt.value
+ })
+ txt.addEventListener('blur', function () {
+     btn.value = txt.value
+ })
+</script>
+</html>

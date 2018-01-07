@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*初始化*/
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .clearfix:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden
+        }
+
+        /*a {
+            font:normal 400 12px/2em "Microsoft Yi Baiti";
+            color:  #303030;
+            text-decoration: none;
+        }*/
+    </style>
+    <link rel="stylesheet" href="css/silder.css">
+
+</head>
+<body>
+<div class="silder" id="silderPzh" style='height: 200px'>
+    <div class="screen">
+        <ul>
+
+        </ul>
+        <ol>
+            <li></li>
+        </ol>
+        <div id="Arr" class="arr">
+            <div id="left" class="left">&lt; </div>
+            <div id="right" class="right">&gt; </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="js/common.js"></script>
+<script src="js/jquery-1.12.2.js"></script>
+<!--<script src="js/PengZH.js"></script>-->
+<script>
+    // 伪数据
+    var imgSrc = [
+        {"src": "images/bigPicPzh/1.jpg", "discription": "对本图片的描述性说明"},
+        {"src": "images/bigPicPzh/2.jpg", "discription": "对本图片的描述性说明"},
+        {"src": "images/bigPicPzh/3.jpg", "discription": "对本图片的描述性说明"},
+        {"src": "images/bigPicPzh/3.jpg", "discription": "对本图片的描述性说明"},
+        {"src": "images/bigPicPzh/3.jpg", "discription": "对本图片的描述性说明"},
+        {"src": "images/bigPicPzh/3.jpg", "discription": "对本图片的描述性说明"},
+        {"src": "images/bigPicPzh/3.jpg", "discription": "对本图片的描述性说明"},
+        {"src": "images/bigPicPzh/3.jpg", "discription": "对本图片的描述性说明"},
+        {"src": "images/bigPicPzh/3.jpg", "discription": "对本图片的描述性说明"},
+        {"src": "images/bigPicPzh/4.jpg", "discription": "对本图片的描述性说明"},
+        {"src": "images/bigPicPzh/5.jpg", "discription": "对本图片的描述性说明"},
+    ];
+
+    var pzh = {
+        "each": function (arr, fn) {
+            if (arr.length) {
+                for (var i = 0; i < arr.length; i++) {
+                    fn(i, arr[i])
+                }
+            } else if (typeof arr === "number") {
+                for (var i = 0; i < arr; i++) {
+                    fn(i)
+                }
+            }
+        },
+        "t"     : document.getElementsByTagName.bind("document"),
+        "te"    : document.body.getElementsByTagName,
+        "id"    : document.getElementById.bind("document"),
+        "ce"    : document.createElement,
+        'q'     : document.querySelector.bind("document"),
+        'qAll'  : document.querySelectorAll.bind("document"),
+        //变量
+        "name": "PengZhengHao"
+    }
+
+    var silder = document.querySelector("#silderPzh") || document.getElementById("silderPzh")
+    var screen = silder.querySelector(".screen") || silder.getElementsByClassName("screen")[0]
+    var ul = screen.querySelector("ul") || screen.getElementsByClassName("ul")[0]
+    var ol = screen.querySelector("ol") || screen.getElementsByClassName("ol")[0]
+    //  结构
+
+    var ulArr = []
+    ulArr.push.apply(ulArr, imgSrc)
+    //  字符串拼接
+    for (var i = 0; i < ulArr.length; i++) {
+        ulArr[i] = '<a href="#"><img src="' + ulArr[i].src + '" alt=""></a>'
+    }
+    ulArr.push(ulArr[0])
+    ulArr.unshift(ulArr[ulArr.length - 2])
+    console.log(ulArr);
+
+    //宽度设定
+    ul.style.width = ulArr.length * 100 + '%'
+
+
+    //  结构添加到DoM树
+    pzh.each(ulArr, function (index) {
+        var li = document.createElement("li")
+
+//        宽度设定
+        li.style.width = 1 / ulArr.length * 100 + '%'
+
+        li.innerHTML = ulArr[index]
+        ul.appendChild(li)
+    })
+    pzh.each(imgSrc, function (index) {
+        var li = document.createElement("li")
+        li.innerHTML = index + 1
+        ol.appendChild(li)
+    })
+
+    // 轮播函数
+    var index = 1
+    function imgFunc(index, fn) {
+//        var width = ul.getElementsByTagName("li")[0].offsetWidth
+
+//        ul.style.left = -index * width + 'px'
+        ul.style.left = -index * 100 + '%'
+        if (fn) {
+            fn()
+        }
+    }
+    imgFunc(index)
+    var flag = 0
+
+    function indexFunc(index, min, max) {
+        flag = 0
+        var num = index
+        if (index >= max) {
+            flag = 1
+            num = min
+        } else if (index <= min) {
+            flag = 1
+            num = max
+        }
+        return num;
+    }
+    /**
+     * 框架动画
+     */
+    function silderFunc() {
+
+        index = indexFunc(index, 1, ulArr.length - 1)
+        if (flag) {
+        //c3部分
+                    ul.style.transition="none"
+        //跳转
+        imgFunc(index)
+        }
+        index++
+//        var width = ul.getElementsByTagName("li")[0].offsetWidth
+        var width = pzh.te.call(ul, "li")[0].offsetWidth
+        //pzh.te.call(ul, "li")[0] ==== ul.getElementByTagName('li')[0]
+        console.log(width);
+        //C3
+        ul.style.transition="left .5s"
+         ul.style.left= -index * width+'px'
+        //动画框架
+//        animate(ul, {"left": -index * width}, 1000 / 60);
+
+        /*        index = indexFunc(index, 1, ulArr.length - 1)
+         if (flag) {
+         imgFunc(index)
+         }*/
+        /*    imgFunc(index, function () {
+         index=indexFunc(index,1,ulArr.length-1)
+         console.log(index)
+         })*/
+    }
+    /**
+     * c3 动画  完美切换不支持 百分比切换
+     * */
+    function silderFunc1() {
+        index = indexFunc(index, 1, ulArr.length - 1)
+        if (flag) {
+            ul.style.transition="none"
+            imgFunc(index)
+        }
+        index--
+//        妈蛋有 中间变量 width 中间变量  c3 的就能运行
+        var width = pzh.te.call(ul, "li")[0].offsetWidth
+        console.log(index);
+        ul.style.transition="left .5s"
+        ul.style.left= -index * width+'px'
+
+    }
+    /**
+     * c3 百分比转换
+     * */
+    function silderFunc2() {
+
+        index = indexFunc(index, 1, ulArr.length - 1)
+        if (flag) {
+            ul.style.transition="none"
+            imgFunc(index)
+        }
+
+        index++
+//        var width = ul.getElementsByTagName("li")[0].offsetWidth
+//        var width = pzh.te.call(ul, "li")[0].offsetWidth
+        var width =  100
+
+        //C3
+        ul.style.transition="left .5s"
+        ul.style.left=-index * width+'%'
+
+
+        /*        index = indexFunc(index, 1, ulArr.length - 1)
+         if (flag) {
+         imgFunc(index)
+         }*/
+        /*    imgFunc(index, function () {
+         index=indexFunc(index,1,ulArr.length-1)
+         console.log(index)
+         })*/
+    }
+    /**
+     * 直接无动画调用----渐变轮播图
+     * */
+    function silderFunc3() {
+        index++
+        index = indexFunc(index, 1, ulArr.length - 1)
+        imgFunc(index)
+    }
+    window.onclick = function () {
+        silderFunc()
+    }
+
+
+</script>
+</html>

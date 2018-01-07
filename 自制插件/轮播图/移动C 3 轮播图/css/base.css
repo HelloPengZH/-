@@ -1,0 +1,55 @@
+div, ul, li, a, input, img, tr, td, body, html,span,ol,p,input {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+p,h1,h2,h3,h4,h5,h6 {
+    margin:0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+body {
+    font:normal 400 14px/2em "Microsoft Yi Baiti",sans-serif;
+}
+ul,ol {
+    list-style: none;
+}
+input,
+button{
+    outline: none;
+    border: none;
+    border: 1px solid #616669;
+}
+a,
+a:hover{
+    /*color: #666;*/
+    text-decoration: none;
+    font-family:"Microsoft Yi Baiti",sans-serif;
+    font-weight:normal;
+    font-style: normal;
+}
+.clearfix:after {
+    content: "";
+    display: block;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+}
+.f_left {
+    float: left;
+}
+.b_bottom {
+    border-bottom: 1px solid #666;
+}
+.b_left {
+    border-left: 1px solid  #666;
+}
+.b_right {
+    border-right: 1px solid  #666;
+}
+.layout {
+    width: 100%;
+    min-width: 310px;
+    max-width: 640px;
+}

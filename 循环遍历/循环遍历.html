@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var array
+    for (var i = 0; i < array.length; i++) {
+
+    }
+
+    while (条件) {
+        条件为真时执行这条语句
+    }
+
+    do {
+//        强制执行 1 次后进入判断 如果条件为真是继续执行
+    } while (条件)
+    {
+//        条件为真时执行这条语句
+    }
+
+    /**
+     * 安时间间隔 依次进行  的遍历
+     * */
+    function each(arr, time, fn) {
+        var index = 0
+        var num = arr
+        if (arr.length) {
+            num=arr.length
+        }
+        arr.timerID = setInterval(function () {
+            if (index < num) {
+                fn(index, arr[index])
+                index++
+            } else {
+                clearInterval(arr.timerID)
+            }
+        }, time)
+    }
+    function each2(arr, time, fn, finishFn) {
+        var index = 0
+        var num = arr
+        if (arr.length) {
+            num=arr.length
+        }
+        arr.timerID = setInterval(function () {
+            if (index < num) {
+                fn(index, arr[index])
+                index++
+            } else {
+                clearInterval(arr.timerID)
+                finishFn(index, arr[index])
+            }
+        }, time)
+    }
+</script>
+</body>
+</html>
