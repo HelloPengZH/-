@@ -1,0 +1,83 @@
+
+/*轮播图css*/
+#bigPicPzh{
+    position: relative;
+    overflow: hidden;
+    width: 1349px;
+}
+#bigPicPzh ul li img {
+    width: 1349px;
+    /*height: 560px;*/margin: 0 -20% 0 0;
+}
+
+#bigPicPzh ul {
+    width: 100000px;
+    position: absolute;
+    left: 0;
+    top: 0px;
+    overflow: hidden;
+    height: 565px;
+}
+
+#bigPicPzh ul li {
+    float: left;
+}
+
+#bigPicPzh ol {
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+
+#bigPicPzh ol li {
+    float: left;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    background: rgba(20, 20, 32, 0.7);
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    margin-left: 10px;
+    cursor: pointer;
+    color: #7b7b7b;
+}
+
+#bigPicPzh ol li.current {
+    /*background: #d6ff71;*/
+    background: rgba(153, 153, 153, 0.5);
+}
+
+#bigPicArr {
+    display: none;
+
+}
+
+#bigPicArr div {
+    width: 40px;
+    height: 40px;
+    padding: 20px 0;
+    position: absolute;
+    top: 50%;
+    margin-top: -40px;
+    background: #000;
+    cursor: pointer;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-family: '黑体';
+    font-size: 30px;
+    color: #fff;
+    opacity: 0.3;
+    border: 1px solid #fff;
+}
+
+#bigPicArr #arrLeft {
+    left: 0;
+}
+
+#bigPicArr #arrRight {
+    right: 0px;
+}
+
