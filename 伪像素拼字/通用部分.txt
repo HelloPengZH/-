@@ -1,0 +1,18 @@
+font:normal 400 12px/2em "Microsoft Yi Baiti";
+
+版心的盒子 
+.w  {
+    position: relative;
+    width: 1210px;
+    overflow: hidden;
+}
+最大的盒子轮播图的属性
+高度使用 560px 
+宽度 设置下 使用1350px 吧 这个应该是比较好的了
+
+主题 	红色 	#CC001A 
+
+	字体 	黑色  #303030
+		灰色  #818181
+
+	body的主体背景色		#F5F5F5

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="common.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            position: relative;
+            /*margin: 80px;*/
+            list-style: none;
+            text-align: center;
+        }
+
+        ul {
+            position: absolute;
+
+        }
+
+        ul li {
+            list-style: none;
+            height: 420px;
+            width: 900px;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            /*background-image: url(images/1.jpg);*/
+        }
+        ol {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            /*width: 100px;*/
+        }
+        ol li {
+            float: left;
+            width: 25px;
+            height: 25px;
+            background-color: #666;
+            border-radius: 50%;
+            margin: 5px;
+            line-height: 25px;
+        }
+        .arr div {
+
+        }
+        .current {
+            background-color: #f4f3ff;
+        }
+        /*.arr{*/
+            /*position: absolute;*/
+        /*}*/
+        .left, .right {
+            height: 69px;
+            width: 41px;
+            background: url("images/arr.png") no-repeat 0 0;
+            position: absolute;
+            margin-top: -34px;
+            left: 0;
+            /*top: 210px;*/
+            top: 240px;
+            /*top:50%;*/
+        }
+
+        .left:hover {
+            background: url("images/arr.png") no-repeat -84px 0;
+        }
+
+        .right {
+            background: url("images/arr.png") no-repeat -42px 0;
+            right: 0;
+            left: auto;
+        }
+
+        .right:hover {
+            background: url("images/arr.png") no-repeat -125px 0;
+        }
+
+        .screen {
+            /*overflow: hidden;*/
+            margin: 100px;
+            position: absolute;
+            width: 900px;
+            height: 420px;
+        }
+    </style>
+    <script src="jquery-1.12.2.js"></script>
+</head>
+<body>
+<div class="screen">
+    <ul>
+    </ul>
+    <ol>
+    </ol>
+    <div class="arr">
+        <div class="left" id='left'></div>
+        <div class="right" id="right"></div>
+    </div>
+</div>
+<script>
+    var imgs = [
+        {"src": "images/1.jpg"},
+        {"src": "images/2.jpg"},
+        {"src": "images/3.jpg"},
+        {"src": "images/4.jpg"},
+        {"src": "images/5.jpg"}
+    ]
+    var ul = document.getElementsByTagName("ul")[0]
+    var ol = document.getElementsByTagName("ol")[0]
+    var left = document.getElementById("left")
+    var right = document.getElementById("right")
+    console.log(ul);
+    for (var i = 0; i < imgs.length; i++) {
+        var obj = imgs[i];
+        var li = document.createElement("li")
+        li.index=i
+        var li1 = document.createElement("li")
+        li1.innerHTML=i+1
+//        li.innerHTML = '<img src="'+imgs[i].src+'" alt="">'
+        li.style.background = 'url("' + imgs[i].src + '")'
+        ul.appendChild(li)
+        ol.appendChild(li1)
+    }
+    var index=0
+    var zIndex=0
+    var ulLis=ul.getElementsByTagName("li")
+    var olLis=ol.getElementsByTagName("li")
+
+    for (var i = 0; i < olLis.length; i++) {
+        olLis[i].index=i
+        olLis[i].onmouseover= function () {
+            for (var i = 0; i < olLis.length; i++) {
+                 olLis[i].className=""
+            }
+            for (var i = 0; i < ulLis.length; i++) {
+                animate(ulLis[i],{"opacity":0},15)
+            }
+            this.className="current"
+            index=this.index
+            animate(ulLis[index],{"opacity":1},15)
+        }
+    }
+/*    right.onclick= function () {
+        if (index == ulLis.length-1) {
+            index= -1
+        }
+        index++
+        console.log(index);
+        for (var i = 0; i < ulLis.length; i++) {
+           ulLis[i].style.opacity=0
+        }
+        animate(ulLis[index],{"opacity":1},15)
+        for (var i = 0; i < olLis.length; i++) {
+            olLis[i].className=""
+        }
+        olLis[index].className="current"
+    }
+    left.onclick= function () {
+
+        if (index == 0) {
+            index= ulLis.length
+        }
+        index--
+        console.log(index);
+        for (var i = 0; i < ulLis.length; i++) {
+            ulLis[i].style.opacity=0
+        }
+        animate(ulLis[index],{"opacity":1},15)
+        for (var i = 0; i < olLis.length; i++) {
+            olLis[i].className=""
+        }
+        olLis[index].className="current"
+    }*/
+    right.onclick= function () {
+        if (index == ulLis.length-1) {
+            index= -1
+        }
+        index++
+        console.log(index);
+        for (var i = 0; i < ulLis.length; i++) {
+//            ulLis[i].style.opacity=0
+            animate(ulLis[i],{"opacity":0},15)
+        }
+        animate(ulLis[index],{"opacity":1},15)
+        for (var i = 0; i < olLis.length; i++) {
+            olLis[i].className=""
+        }
+        olLis[index].className="current"
+    }
+    left.onclick= function () {
+
+        if (index == 0) {
+            index= ulLis.length
+        }
+        index--
+        console.log(index);
+        for (var i = 0; i < ulLis.length; i++) {
+            animate(ulLis[i],{"opacity":0},15)
+        }
+        animate(ulLis[index],{"opacity":1},15)
+        for (var i = 0; i < olLis.length; i++) {
+            olLis[i].className=""
+        }
+        olLis[index].className="current"
+    }
+</script>
+<script>
+    var imgs = [
+        {"src": "images/1.jpg"},
+        {"src": "images/2.jpg"},
+        {"src": "images/3.jpg"},
+        {"src": "images/4.jpg"},
+        {"src": "images/5.jpg"}
+    ]
+    var ul = document.getElementsByTagName("ul")[0]
+    var ol = document.getElementsByTagName("ol")[0]
+    var left = document.getElementById("left")
+    var right = document.getElementById("right")
+    console.log(ul);
+    for (var i = 0; i < imgs.length; i++) {
+        var obj = imgs[i];
+        var li = document.createElement("li")
+        li.index=i
+        var li1 = document.createElement("li")
+        li1.innerHTML=i+1
+//        li.innerHTML = '<img src="'+imgs[i].src+'" alt="">'
+        li.style.background = 'url("' + imgs[i].src + '")'
+        ul.appendChild(li)
+        ol.appendChild(li1)
+    }
+</script>
+</body>
+</html>

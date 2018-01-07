@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box div {
+            height: 30px;
+            width: 30px;
+            background-color: #FF3040;
+            position: absolute;
+        }
+
+        #box {
+            position: relative;
+            /*opacity: ;*/
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script src="common.js"></script>
+<script src ="../jquery-1.12.2.js"></script>
+<script>
+    var meet = [
+        {"top": 1, "left": 1},
+        {"top": 1, "left": 2},
+        {"top": 2, "left": 2},
+        {"top": 3, "left": 2},
+        {"top": 4, "left": 2},
+        {"top": 5, "left": 2},
+        {"top": 6, "left": 2},
+        {"top": 7, "left": 2},
+        {
+            "top": 8,
+            "left": 2
+        },
+        {
+            "top": 9,
+            "left": 2
+        }, {"top": 10, "left": 2},
+        {"top": 11, "left": 2},
+        {"top": 11, "left": 1},
+        {"top": 11, "left": 3},
+        {
+            "top": 4,
+            "left": 3
+        }, {"top": 5, "left": 4},
+        {"top": 6, "left": 4},
+        {"top": 4, "left": 5},
+        {"top": 3, "left": 6},
+        {
+            "top": 2,
+            "left": 6
+        }, {"top": 1, "left": 6},
+        {"top": 1, "left": 7},
+        {"top": 4, "left": 6},
+        {"top": 5, "left": 6},
+        {
+            "top": 6,
+            "left": 6
+        }, {"top": 7, "left": 6},
+        {"top": 8, "left": 6},
+        {"top": 9, "left": 6},
+        {"top": 10, "left": 6},
+        {
+            "top": 11,
+            "left": 6
+        }, {"top": 11, "left": 5},
+        {"top": 11, "left": 7},
+        {"top": 9, "left": 9},
+        {"top": 10, "left": 10},
+        {
+            "top": 10,
+            "left": 11
+        }, {"top": 10, "left": 12}, {"top": 9, "left": 13}, {"top": 8, "left": 9}, {"top": 7, "left": 9}, {
+            "top": 6,
+            "left": 9
+        }, {"top": 5, "left": 9}, {"top": 4, "left": 9}, {"top": 3, "left": 10}, {"top": 3, "left": 11}, {
+            "top": 3,
+            "left": 12
+        }, {"top": 4, "left": 13}, {"top": 5, "left": 13}, {"top": 6, "left": 13}, {"top": 6, "left": 12}, {
+            "top": 6,
+            "left": 11
+        }, {"top": 6, "left": 10}, {"top": 4, "left": 16}, {"top": 5, "left": 16}, {"top": 6, "left": 16}, {
+            "top": 7,
+            "left": 16
+        }, {"top": 8, "left": 16}, {"top": 9, "left": 16}, {"top": 10, "left": 17}, {"top": 10, "left": 18}, {
+            "top": 10,
+            "left": 19
+        }, {"top": 9, "left": 20}, {"top": 3, "left": 17}, {"top": 3, "left": 18}, {"top": 3, "left": 19}, {
+            "top": 4,
+            "left": 20
+        }, {"top": 6, "left": 20}, {"top": 5, "left": 20}, {"top": 6, "left": 19}, {"top": 6, "left": 18}, {
+            "top": 6,
+            "left": 17
+        }, {"top": 4, "left": 23}, {"top": 4, "left": 24}, {"top": 4, "left": 25}, {"top": 4, "left": 26}, {
+            "top": 4,
+            "left": 27
+        }, {"top": 3, "left": 25}, {"top": 2, "left": 25}, {"top": 1, "left": 25}, {"top": 0, "left": 25}, {
+            "top": 5,
+            "left": 25
+        }, {"top": 6, "left": 25}, {"top": 7, "left": 25}, {"top": 8, "left": 25}, {"top": 9, "left": 25}, {
+            "top": 10,
+            "left": 26
+        }, {"top": 9, "left": 27}
+    ]
+    var our= [
+        {"top":1, "left":2},
+        {"top":1, "left":3},{"top":1, "left":4},{"top":2, "left":1},{"top":3, "left":1},{"top":4, "left":1},{"top":5, "left":1},{"top":6, "left":1},{"top":7, "left":1},{"top":8, "left":1},{"top":9, "left":1},{"top":10, "left":1},{"top":11, "left":2},{"top":11, "left":3},{"top":11, "left":4},{"top":10, "left":5},{"top":9, "left":5},{"top":8, "left":5},{"top":7, "left":5},{"top":6, "left":5},{"top":5, "left":5},{"top":4, "left":5},{"top":3, "left":5},{"top":2, "left":5},{"top":3, "left":8},{"top":3, "left":9},{"top":4, "left":9},{"top":5, "left":9},{"top":6, "left":9},{"top":7, "left":9},{"top":8, "left":9},{"top":9, "left":9},{"top":10, "left":10},{"top":9, "left":11},{"top":9, "left":12},{"top":10, "left":12},{"top":10, "left":13},{"top":8, "left":12},{"top":7, "left":12},{"top":6, "left":12},{"top":5, "left":12},{"top":4, "left":12},{"top":3, "left":12},{"top":10, "left":17},{"top":9, "left":17},{"top":8, "left":17},{"top":7, "left":17},{"top":6, "left":17},{"top":5, "left":17},{"top":4, "left":16},{"top":4, "left":18},{"top":4, "left":19},{"top":5, "left":20}]
+//    var ourJob=[{"top":1, "left":2},{"top":1, "left":3},{"top":1, "left":4},{"top":2, "left":1},{"top":3, "left":1},{"top":4, "left":1},{"top":5, "left":1},{"top":6, "left":1},{"top":7, "left":1},{"top":8, "left":1},{"top":9, "left":1},{"top":10, "left":1},{"top":11, "left":2},{"top":11, "left":3},{"top":11, "left":4},{"top":10, "left":5},{"top":9, "left":5},{"top":8, "left":5},{"top":7, "left":5},{"top":6, "left":5},{"top":5, "left":5},{"top":4, "left":5},{"top":3, "left":5},{"top":2, "left":5},{"top":3, "left":8},{"top":3, "left":9},{"top":4, "left":9},{"top":5, "left":9},{"top":6, "left":9},{"top":7, "left":9},{"top":8, "left":9},{"top":9, "left":9},{"top":10, "left":10},{"top":9, "left":11},{"top":9, "left":12},{"top":10, "left":12},{"top":10, "left":13},{"top":8, "left":12},{"top":7, "left":12},{"top":6, "left":12},{"top":5, "left":12},{"top":4, "left":12},{"top":3, "left":12},{"top":10, "left":17},{"top":9, "left":17},{"top":8, "left":17},{"top":7, "left":17},{"top":6, "left":17},{"top":5, "left":17},{"top":4, "left":16},{"top":4, "left":18},{"top":4, "left":19},{"top":5, "left":20},{"top":9, "left":23},{"top":10, "left":23},{"top":11, "left":24},{"top":11, "left":25},{"top":11, "left":26},{"top":10, "left":27},{"top":9, "left":27},{"top":8, "left":27},{"top":7, "left":27},{"top":6, "left":27},{"top":5, "left":27},{"top":3, "left":27},{"top":4, "left":27},{"top":2, "left":27},{"top":1, "left":27},{"top":1, "left":26},{"top":1, "left":25},{"top":1, "left":28},{"top":1, "left":29},{"top":9, "left":31},{"top":8, "left":31},{"top":7, "left":31},{"top":6, "left":31},{"top":5, "left":31},{"top":4, "left":31},{"top":10, "left":32},{"top":10, "left":33},{"top":10, "left":34},{"top":9, "left":35},{"top":8, "left":35},{"top":7, "left":35},{"top":6, "left":35},{"top":5, "left":35},{"top":4, "left":35},{"top":3, "left":34},{"top":3, "left":33},{"top":3, "left":32},{"top":0, "left":38},{"top":1, "left":38},{"top":2, "left":38},{"top":3, "left":38},{"top":4, "left":38},{"top":5, "left":38},{"top":6, "left":38},{"top":7, "left":38},{"top":8, "left":38},{"top":9, "left":38},{"top":10, "left":38},{"top":9, "left":39},{"top":4, "left":39},{"top":3, "left":40},{"top":3, "left":41},{"top":3, "left":42},{"top":4, "left":43},{"top":5, "left":43},{"top":6, "left":43},{"top":7, "left":43},{"top":8, "left":43},{"top":10, "left":40},
+    var ourJob=[{"top":1, "left":2}
+        ,{"top":1, "left":3},{"top":1, "left":4},{"top":2, "left":1},{"top":3, "left":1},{"top":4, "left":1},{"top":5, "left":1},{"top":6, "left":1},{"top":7, "left":1},{"top":8, "left":1},{"top":9, "left":1},{"top":10, "left":1},{"top":11, "left":2},{"top":11, "left":3},{"top":11, "left":4},{"top":10, "left":5},{"top":9, "left":5},{"top":8, "left":5},{"top":7, "left":5},{"top":6, "left":5},{"top":5, "left":5},{"top":4, "left":5},{"top":3, "left":5},{"top":2, "left":5},{"top":3, "left":8},{"top":3, "left":9},{"top":4, "left":9},{"top":5, "left":9},{"top":6, "left":9},{"top":7, "left":9},{"top":8, "left":9},{"top":9, "left":9},{"top":10, "left":10},{"top":9, "left":11},{"top":9, "left":12},{"top":10, "left":12},{"top":10, "left":13},{"top":8, "left":12},{"top":7, "left":12},{"top":6, "left":12},{"top":5, "left":12},{"top":4, "left":12},{"top":3, "left":12},{"top":10, "left":17},{"top":9, "left":17},{"top":8, "left":17},{"top":7, "left":17},{"top":6, "left":17},{"top":5, "left":17},{"top":4, "left":16},{"top":4, "left":18},{"top":4, "left":19},{"top":5, "left":20},{"top":9, "left":23},{"top":10, "left":23},{"top":11, "left":24},{"top":11, "left":25},{"top":11, "left":26},{"top":10, "left":27},{"top":9, "left":27},{"top":8, "left":27},{"top":7, "left":27},{"top":6, "left":27},{"top":5, "left":27},{"top":3, "left":27},{"top":4, "left":27},{"top":2, "left":27},{"top":1, "left":27},{"top":1, "left":26},{"top":1, "left":25},{"top":1, "left":28},{"top":1, "left":29},{"top":9, "left":31},{"top":8, "left":31},{"top":7, "left":31},{"top":6, "left":31},{"top":5, "left":31},{"top":4, "left":31},{"top":10, "left":32},{"top":10, "left":33},{"top":10, "left":34},{"top":9, "left":35},{"top":8, "left":35},{"top":7, "left":35},{"top":6, "left":35},{"top":5, "left":35},{"top":4, "left":35},{"top":3, "left":34},{"top":3, "left":33},{"top":3, "left":32},{"top":0, "left":38},{"top":1, "left":38},{"top":2, "left":38},{"top":3, "left":38},{"top":4, "left":38},{"top":5, "left":38},{"top":6, "left":38},{"top":7, "left":38},{"top":8, "left":38},{"top":9, "left":38},{"top":10, "left":38},{"top":9, "left":39},{"top":4, "left":39},{"top":3, "left":40},{"top":3, "left":41},{"top":3, "left":42},{"top":4, "left":43},{"top":5, "left":43},{"top":6, "left":43},{"top":7, "left":43},{"top":8, "left":43},{"top":10, "left":40},{"top":10, "left":41},{"top":10, "left":42},{"top":9, "left":43}]
+    var box = document.getElementById("box")
+    for (var i = 0; i < meet.length; i++) {
+        var div = document.createElement("div")
+        div.style.width = 20 + "px"
+        div.style.height = 20 + "px"
+//        div.style.top=meet[i].top*20+'px'
+//        div.style.left=meet[i].left*20+'px'
+        div.style.top = Math.random() * 700 + 'px'
+        div.style.left = Math.random() * 1000 + 'px'
+//        var color='#'+(parseInt(Math.random()*16777216)).toString(16)
+//        div.style.backgroundColor=color
+
+        box.appendChild(div)
+
+    }
+    var divs = box.children
+
+    window.onclick = function () {
+        for (var i = 0; i < meet.length; i++) {
+            animate(divs[i], {"top": meet[i].top * 25, "left": meet[i].left * 25}, 40)
+//            animate(divs[i], {"width": 20, "height": 20,"top": ourJob[i].top * 25, "left": ourJob[i].left * 25}, 40)
+        }
+    }
+    console.log(Math.pow(16, 6));
+
+</script>
+</body>
+</html>

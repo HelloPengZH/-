@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>你好世界</title>
+    <style>
+        body {
+            /*background-color: #225555;*/
+            background: url("index.jpg");
+        }
+
+        #box div {
+            height: 30px;
+            width: 30px;
+            background-color: #f4f3ff;
+            position: absolute;
+            border-radius: 10%;
+        }
+
+        #box {
+            position: relative;
+            /*opacity: ;*/
+        }
+
+    </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .indexPic {
+            width: 60px;
+            height: 60px;
+            background-color: #edefb0;
+            /*width: 800px;*/
+            /*height: 240px;*/
+            position: absolute;
+            overflow: hidden;
+        }
+
+        .headPic {
+            float: left;
+        }
+
+        .headPic .img {
+            height: 50px;
+            width: 50px;
+            background-color: #ff5134;
+            margin: 5px;
+        }
+
+        .content {
+            border-left: 1px dashed #ffffff;
+            overflow: hidden;
+        }
+
+        .content h3 {
+            font: normal 700 24px/2em "microsoft YAHEI";
+            text-align: center;
+        }
+
+        .pic {
+            width: 300px;
+            height: 240px;
+            background-color: #8f67ff;
+            float: right;
+        }
+
+        .content .text {
+            float: left;
+            width: 350px;
+            padding: 0 30px;
+            text-indent: 2em;
+        }
+
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<!--<div id="box2">
+    <div class="indexPic">
+        <div class="headPic">
+            <div class="img"><a href=""><img src="images/superIndex/tu1.jpeg" alt="" style="width: 50px;height: 50px;"></a></div>
+        </div>
+        <div class="content ">
+            <div class="text">
+                <h3>图尔库</h3>
+                <p>图尔库 Turku，瑞典称“奥布”。芬兰的主要港市。在芬兰西南奥拉约基河河口，波的尼亚湾畔。人口180,225（2012-12-31）。是全国最古老的城市。</p>
+            </div>
+            <div class="pic"><a href="#"><img class="contentImg" src="images/superIndex/tu2.jpeg" alt=""></a></div>
+        </div>
+    </div>
+    <div class="indexPic">
+        <div class="headPic">
+            <div class="img"><a href="#"><img src="images/superIndex/tu1.jpeg" alt="" style="width: 50px;height: 50px;"></a></div>
+        </div>
+        <div class="content ">
+            <div class="text">
+                <h3>图尔库</h3>
+                <p>图尔库 Turku，瑞典称“奥布”。芬兰的主要港市。在芬兰西南奥拉约基河河口，波的尼亚湾畔。人口180,225（2012-12-31）。是全国最古老的城市。</p>
+            </div>
+            <div class="pic"><a href="#"><img class="contentImg" src="images/superIndex/tu2.jpeg" alt=""></a></div>
+        </div>
+    </div>
+    <div class="indexPic">
+        <div class="headPic">
+            <div class="img"><a href="#"><img src="images/superIndex/tu1.jpeg" alt="" style="width: 50px;height: 50px;"></a></div>
+        </div>
+        <div class="content ">
+            <div class="text">
+                <h3>图尔库</h3>
+                <p>图尔库 Turku，瑞典称“奥布”。芬兰的主要港市。在芬兰西南奥拉约基河河口，波的尼亚湾畔。人口180,225（2012-12-31）。是全国最古老的城市。</p>
+            </div>
+            <div class="pic"><a href="#"><img class="contentImg" src="images/superIndex/tu2.jpeg" alt=""></a></div>
+        </div>
+    </div>
+    <div class="indexPic">
+        <div class="headPic">
+            <div class="img"><a href="#"><img src="images/superIndex/tu1.jpeg" alt="" style="width: 50px;height: 50px;"></a></div>
+        </div>
+        <div class="content ">
+            <div class="text">
+                <h3>图尔库</h3>
+                <p>图尔库 Turku，瑞典称“奥布”。芬兰的主要港市。在芬兰西南奥拉约基河河口，波的尼亚湾畔。人口180,225（2012-12-31）。是全国最古老的城市。</p>
+            </div>
+            <div class="pic"><a href="#"><img class="contentImg" src="images/superIndex/tu2.jpeg" alt=""></a></div>
+        </div>
+    </div>
+    <div class="indexPic">
+        <div class="headPic">
+            <div class="img"><a href="#"><img src="images/superIndex/tu1.jpeg" alt="" style="width: 50px;height: 50px;"></a></div>
+        </div>
+        <div class="content ">
+            <div class="text">
+                <h3>图尔库</h3>
+                <p>图尔库 Turku，瑞典称“奥布”。芬兰的主要港市。在芬兰西南奥拉约基河河口，波的尼亚湾畔。人口180,225（2012-12-31）。是全国最古老的城市。</p>
+            </div>
+            <div class="pic"><a href="#"><img class="contentImg" src="images/superIndex/tu2.jpeg" alt=""></a></div>
+        </div>
+    </div>
+    <div class="indexPic">
+        <div class="headPic">
+            <div class="img"><a href="#"><img src="images/superIndex/tu1.jpeg" alt="" style="width: 50px;height: 50px;"></a></div>
+        </div>
+        <div class="content ">
+            <div class="text">
+                <h3>图尔库</h3>
+                <p>图尔库 Turku，瑞典称“奥布”。芬兰的主要港市。在芬兰西南奥拉约基河河口，波的尼亚湾畔。人口180,225（2012-12-31）。是全国最古老的城市。</p>
+            </div>
+            <div class="pic"><a href="#"><img class="contentImg" src="images/superIndex/tu2.jpeg" alt=""></a></div>
+        </div>
+    </div>
+</div>-->
+<script src="common.js"></script>
+<script src="jquery-1.12.2.js"></script>
+<script>
+    //位置数组
+
+    var meetUs = [{"top": 1, "left": 2}, {"top": 1, "left": 1}, {"top": 2, "left": 2}, {"top": 3, "left": 2}, {
+        "top": 4,
+        "left": 2
+    }, {"top": 6, "left": 2}, {"top": 5, "left": 2}, {"top": 7, "left": 2}, {"top": 9, "left": 2}, {
+        "top": 8,
+        "left": 2
+    }, {"top": 10, "left": 2}, {"top": 11, "left": 2}, {"top": 11, "left": 1}, {"top": 11, "left": 3}, {
+        "top": 4,
+        "left": 3
+    }, {"top": 5, "left": 4}, {"top": 6, "left": 4}, {"top": 4, "left": 5}, {"top": 3, "left": 6}, {
+        "top": 2,
+        "left": 6
+    }, {"top": 1, "left": 6}, {"top": 1, "left": 7}, {"top": 4, "left": 6}, {"top": 5, "left": 6}, {
+        "top": 6,
+        "left": 6
+    }, {"top": 7, "left": 6}, {"top": 8, "left": 6}, {"top": 9, "left": 6}, {"top": 10, "left": 6}, {
+        "top": 11,
+        "left": 6
+    }, {"top": 11, "left": 5}, {"top": 11, "left": 7}, {"top": 9, "left": 10}, {"top": 10, "left": 11}, {
+        "top": 10,
+        "left": 12
+    }, {"top": 10, "left": 13}, {"top": 8, "left": 10}, {"top": 7, "left": 10}, {"top": 6, "left": 10}, {
+        "top": 5,
+        "left": 10
+    }, {"top": 4, "left": 10}, {"top": 6, "left": 11}, {"top": 6, "left": 12}, {"top": 6, "left": 13}, {
+        "top": 6,
+        "left": 14
+    }, {"top": 3, "left": 11}, {"top": 3, "left": 12}, {"top": 3, "left": 13}, {"top": 4, "left": 14}, {
+        "top": 5,
+        "left": 14
+    }, {"top": 9, "left": 14}, {"top": 9, "left": 17}, {"top": 8, "left": 17}, {"top": 7, "left": 17}, {
+        "top": 6,
+        "left": 17
+    }, {"top": 5, "left": 17}, {"top": 4, "left": 17}, {"top": 3, "left": 18}, {"top": 3, "left": 19}, {
+        "top": 3,
+        "left": 20
+    }, {"top": 4, "left": 21}, {"top": 5, "left": 21}, {"top": 6, "left": 21}, {"top": 6, "left": 20}, {
+        "top": 6,
+        "left": 19
+    }, {"top": 6, "left": 18}, {"top": 10, "left": 18}, {"top": 10, "left": 19}, {"top": 10, "left": 20}, {
+        "top": 9,
+        "left": 21
+    }, {"top": 4, "left": 24}, {"top": 4, "left": 25}, {"top": 4, "left": 26}, {"top": 4, "left": 27}, {
+        "top": 4,
+        "left": 28
+    }, {"top": 3, "left": 26}, {"top": 2, "left": 26}, {"top": 1, "left": 26}, {"top": 0, "left": 26}, {
+        "top": 10,
+        "left": 27
+    }, {"top": 9, "left": 28}, {"top": 9, "left": 26}, {"top": 8, "left": 26}, {"top": 7, "left": 26}, {
+        "top": 6,
+        "left": 26
+    }, {"top": 5, "left": 26}, {"top": 3, "left": 36}, {"top": 3, "left": 37}, {"top": 4, "left": 37}, {
+        "top": 5,
+        "left": 37
+    }, {"top": 6, "left": 37}, {"top": 7, "left": 37}, {"top": 8, "left": 37}, {"top": 9, "left": 37}, {
+        "top": 10,
+        "left": 38
+    }, {"top": 9, "left": 39}, {"top": 9, "left": 40}, {"top": 10, "left": 40}, {"top": 8, "left": 40}, {
+        "top": 7,
+        "left": 40
+    }, {"top": 6, "left": 40}, {"top": 5, "left": 40}, {"top": 4, "left": 40}, {"top": 3, "left": 40}, {
+        "top": 10,
+        "left": 41
+    }, {"top": 10, "left": 44}, {"top": 10, "left": 45}, {"top": 10, "left": 46}, {"top": 9, "left": 47}, {
+        "top": 8,
+        "left": 47
+    }, {"top": 7, "left": 46}, {"top": 7, "left": 45}, {"top": 7, "left": 44}, {"top": 6, "left": 43}, {
+        "top": 5,
+        "left": 43
+    }, {"top": 4, "left": 43}, {"top": 3, "left": 44}, {"top": 3, "left": 45}, {"top": 3, "left": 46}, {
+        "top": 9,
+        "left": 43
+    }, {"top": 4, "left": 47}]
+    //初始化
+    var box = document.getElementById("box")
+    for (var i = 0; i < meetUs.length; i++) {
+        var div = document.createElement("div")
+        div.style.width = 2 + "px"
+        div.style.height = 3 + "px"
+//        div.style.top=meet[i].top*20+'px'
+//        div.style.left=meet[i].left*20+'px'
+        div.style.top = Math.random() * 500 + 'px'
+        div.style.left = Math.random() * 1000 + 'px'
+//        变色
+//        var color='#'+(parseInt(Math.random()*16777216)).toString(16)
+//        div.style.backgroundColor=color
+
+        box.appendChild(div)
+
+    }
+    var divs = box.children
+    //    console.log($(divs));
+    //    $(divs)
+    //复位显示字迹
+    var imgArrPlace=[
+        {"top": 4, "left":2 },
+        {"top": 4, "left":3 },
+        {"top": 4, "left":4 },
+        {"top": 5, "left":2 },
+        {"top": 5, "left":3 },
+        {"top": 5, "left":4 },
+    ]
+    window.onclick = function () {
+        clearInterval(toBackID)
+        clearInterval(randomId)
+        clearInterval(colorID)
+        clearInterval(clickId)
+        for (var i = 0; i < meetUs.length; i++) {
+            clearInterval(divs[i].timeId)
+            clearInterval(divs[i].lightId)
+        }
+        setTimeout(function () {
+            for (var i = 0; i < meetUs.length; i++) {
+                animate(divs[i], {
+                    "width": 20, "height": 20, "top": meetUs[i].top * 25, "left": meetUs[i].left * 25, "opacity": 1
+                }, 15)
+            }
+        }, 100)
+//        $(".headPic .img").animate({ "height": 100,"width": 100,"margin":0})
+//        $(".headPic .img img").animate({ "height": 100,"width": 100})
+        $(".indexPic").each(function (index,element) {
+            animate(element, {
+                "top": imgArrPlace[index].top * 100, "left": imgArrPlace[index].left * 100
+            })
+        })
+    }
+    //    随机属性
+    /*    var randomId = setInterval(function () {
+     var indexRandom = parseInt(Math.random() * divs.length)
+     //        var str='{"top":'+ Math.random() * 700 +', "left": '+Math.random() * 1000+'}'
+     var random = {
+     //            "top": parseInt(Math.random() * 300),
+     //            "left": parseInt(Math.random() * 1000),
+     //            "border-radius": 0
+     //            "opacity": Math.random()
+     //闪烁
+     //            "opacity": 0
+     }
+     //        animate(divs[indexRandom], random, 20)
+     lightStar(divs[indexRandom], function () {
+
+     })
+
+     }, 500)*/
+    var randomId = setInterval(function () {
+        var indexRandom = parseInt(Math.random() * divs.length)
+        //        var str='{"top":'+ Math.random() * 700 +', "left": '+Math.random() * 1000+'}'
+        var random = {
+            "top": parseInt(Math.random() * 300),
+            "left": parseInt(Math.random() * 1300),
+//            "border-radius": 0
+//            "opacity": Math.random()
+            //闪烁
+//            "opacity": 0
+        }
+//        animate(divs[indexRandom], random, 20)
+        styleJumpTo(divs[indexRandom], random)
+        lightStar(divs[indexRandom])
+    }, 500)
+    //明暗闪烁
+    function lightStar(element, fn) {
+        var timeLength = parseInt(Math.random() * 100 + 1)
+        element.brightflag = 1
+        //随机明暗数组
+        var star = timeLength.toString(2).split("");
+        star.push("1")
+//        var star =[1,1,0,0,1,0,1]
+        var i = 0;
+//        element.lightId = setInterval(function () {
+        clearInterval(element.lightId)
+        element.lightId = setInterval(function () {
+            if (i < star.length) {
+                animate(element, {"opacity": star[i]}, 15)
+//                styleJumpTo(element, {"opacity": star[i]})
+            } else {
+                clearInterval(element.lightId)
+                i = 0
+            }
+            i++
+        }, 300)//闪烁频率
+        if (fn) {
+            fn()
+        }
+    }
+    //变色酷图特效
+    var color = randomColor()
+    var colorID
+    var colorFlag = 1
+    var colorFlag1 = 1
+    window.ondblclick = function () {
+        /* console.log($("#box div").first("div"));
+         $("#box div").first("div").css({"backgroundColor": color}).ready(function () {
+         //arguments.callee相当于递归
+         color = randomColor()
+         // $(this).next().css({"background-color":color}).ready(arguments.callee);
+         });*/
+
+//        $(this).css({"backgroundColor":color,"transform":"rotateY(180deg)","transition":"1s"})
+        var i = 0;
+        clearInterval(colorID)
+        colorID = setInterval(function () {
+            if (i < $("#box div").length) {
+                color = randomColor()
+                if (colorFlag) {
+                    $(divs[i]).css({"backgroundColor": color, "transform": "rotateY(180deg)", "transition": "1s"})
+                    colorFlag = 0
+                } else {
+                    $(divs[i]).css({"backgroundColor": color, "transform": "rotateX(180deg)", "transition": "1s"})
+                    colorFlag = 1
+                }
+                colorFlag1 = 0
+//                styleJumpTo(element, {"opacity": star[i]})
+            } else {
+                clearInterval(colorID)
+                i = 0
+            }
+            i++
+        }, 30)
+    }
+    var clickId
+    $("#box div").click(function (a,b,c,d,e,f) {
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        console.log(d);
+        console.log(e);
+        console.log(f);
+        clearInterval(randomId)
+        clearInterval(colorID)
+        clearInterval(clickId)
+        for (var i = 0; i < meetUs.length; i++) {
+            clearInterval(divs[i].timeId)
+            clearInterval(divs[i].lightId)
+        }
+       /* setTimeout(function () {
+            for (var i = 0; i < meetUs.length; i++) {
+                animate(divs[i], {
+                    "width": 20, "height": 20, "top": 500, "left": meetUs[i].left * 25, "opacity": 1
+                }, 15)
+            }
+        }, 100)*/
+    })
+    /* $(function () {
+     $("#btn1").click(function () {
+     //获取div,最后一个图片,隐藏
+     $("div>img").last("img").hide(800,function () {
+     //arguments.callee相当于递归
+     $(this).prev().hide(800,arguments.callee);
+     });
+     });
+     //显示
+     $("#btn2").click(function () {
+     $("div>img").first("img").show(800,function () {
+     //arguments.callee相当于递归
+     $(this).next().show(800,arguments.callee);
+     });
+     });
+     });*/
+    function randomColor(color) {
+        var aa = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "a", "b", "c", "d", "e", "f"]//0-15
+        function radom() {
+            var random = Math.floor(Math.random() * 16)//0-15
+            return random
+        }
+
+        var str = "#"
+        if (color) {
+            str = "#" + color
+            for (var i = 0; i < 6 - color.length; i++) {
+                str = str + aa[radom()]
+            }
+        } else {
+            for (var i = 0; i < 6; i++) {
+                str = str + aa[radom()]
+            }
+        }
+        return str
+    }
+    function randomColor2 () {
+        var color =Math.floor( Math.random()*16777216).toString(16)
+        return "#"+color
+    }
+    /*需求效果
+     * 显示图片
+     * 移动上去有介绍展示渐进
+     * 九宫格
+     * 定时换图
+     * 整体效果类似于bing搜索
+     * */
+    var toBackID
+    $("#box div").click(function () {
+                clearInterval(toBackID)
+                var i=0
+                toBackID = setInterval(function () {
+                    if (i < divs.length) {
+                        $(divs[i]).animate({"top":400, "left": meetUs[i].left * 25
+                        },1000)
+//                styleJumpTo(element, {"opacity": star[i]})
+                    } else {
+                        $(divs).animate({"top":400, "left":0   },1000, function () {
+                            $(divs).stop().animate({"opacity": 0},500, function () {
+                                clearInterval(toBackID)
+                            })
+                        })
+                        clearInterval(toBackID)
+                        i = 0
+                    }
+                    i++
+                }, 100)
+                return false
+            }
+    )
+</script>
+<!--<script>
+    //box2
+    //创建结构
+    //    var bindexPicContent =[
+    //        {"pic1":"images/superIndex/tu1.jpeg","pic2":"images/superIndex/tu2.jpeg","title":"图尔库","content":"图尔库 Turku，瑞典称“奥布”。芬兰的主要港市。在芬兰西南奥拉约基河河口，波的尼亚湾畔。人口180,225（2012-12-31）。是全国最古老的城市。"},
+    //        {"title":"多瑙河","pic1":"images/superIndex/duo1.jpg","pic2":"images/superIndex/duo2.jpg","content":"多瑙河在欧洲长度仅次于伏尔加河，是欧洲第二长河。它发源于德国西南部，自西向东流，流经奥地利、斯洛伐克、匈牙利、克罗地亚、塞尔维亚、保加利亚、罗马尼亚、乌克兰，最后注入黑海。"},
+    //        {"title":"冰岛 IceLand","pic1":"images/superIndex/ice1.jpg","pic2":"images/superIndex/2.jpg","content":"多瑙河在欧洲长度仅次于伏尔加河，是欧洲第二长河。它发源于德国西南部，自西向东流，流经奥地利、斯洛伐克、匈牙利、克罗地亚、塞尔维亚、保加利亚、罗马尼亚、乌克兰，最后注入黑海。"},
+    //    ]
+    //事件特效及简单动画
+
+    var zIndex = 0;
+    $(".indexPic").mouseenter(function () {
+        zIndex++;
+        $(this).stop().animate({"width": 800}, 500, function () {
+            $(this).stop(true,true).animate({"height": 240}).css("zIndex",zIndex)
+        })
+    }).mouseleave(function () {
+        $(this).stop().animate({"height": 60}, 500, function () {
+            $(this).stop().animate({"width": 60})
+        })
+    }).each(function (index,element) {
+        $(element).css({"top": Math.random() * 700, "left": Math.random() * 1000})
+    })
+    $(".contentImg").mouseenter(function () {
+        $(this).stop().animate({"height": 240, "width": 300}, 500)
+    }).mouseleave(function () {
+        $(this).removeAttr("style")
+    })
+    //消失效果
+/*    $("#box div").click(function () {
+        $("#box div").each(function (index,element) {
+            $(element).animate({"top":400, "left": meetUs[index].left * 25
+            },1000)
+        })
+    })*/
+
+</script>-->
+</body>
+</html>

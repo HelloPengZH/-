@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 比较两个数的值
+    function Max(x, y) {
+        //方法1
+        //return Math.max(x,y)
+        //方法2
+        return x > y ? x : y
+        //方法3
+        //    if (x > y) {
+        //        return x;
+        //    } else {
+        //        return y
+        //    }
+    }
+            //console.log(m);
+
+    //随机数组
+    /*    var a = [], b = [], c;
+     for (i = 0; i <= 20; i++) {
+     a[i] = Math.floor(10 * Math.random())
+     }
+     for (var i = a.length - 1; i >= 0; i--) {
+     b[i] = a[i];
+     }
+     console.log("随机数组" + a);*/
+    //获得一个随机数组 a是数组长度, b 是数组中每个数位数的大小
+    function NewArr(a, b) {
+        var c = []
+        for (var i = 0; i < a; i++) {
+            c[i] = Math.floor(Math.random() * b)
+        }
+        return c
+    }
+//最值
+    //数组找出最大值 未封装
+    c = 0
+    for (var i = 0; i + c < a.length; i++) {
+        //for (var j=0;j+i< a.length ;j++) {}
+        if (a[c] < a[c + i]) {
+            c = c + i
+        }
+
+    }
+    //取数组的最大值
+    function MaxArr(a) {
+        var i = 0;
+        for (var j = 1; i + j < a.length; j++) {
+            if (a[i] > a[i + j]) {
+                i = i + j
+            }
+        }
+        return a[i]
+    }
+    //求随机数组的最大值
+    function Max1(a) {
+        var c = 0
+        for (var i = 1; i + c < a.length; i++) {
+            //for (var j=0;j+i< a.length ;j++) {}
+            if (a[c] < a[c + i]) {
+                c = c + i
+            }
+        }
+        return a[c]
+    }
+            //console.log(Max1(a));
+
+    //取数组的最小值
+    function MaxArr(a) {
+        var i = 0
+        for (var j = 1; i + j < a.length; j++) {
+            if (a[i] > a[i + j]) {
+                i = i + j
+            }
+        }
+        return a[i]
+    }
+    //数组最小值
+    function Min() {
+        var c = 0
+        for (var i = 1; i + c < a.length; i++) {
+            if (a[c] > a[c + i]) {
+                c = c + i
+            }
+        }
+        return a[c]
+    }
+            //console.log(Min(a));
+
+
+//对随机数组去重 (初始版本)
+    function New(a) {
+        var b = []
+        for (var i = 0; i < a.landingpage; i++) {
+            for (var j = 1; i + j < a.length; j++) {
+                if (a[i] == a[i + j]) {
+                    a[i + j] = "."
+                }
+            }
+            if (a[i] !== ".") {
+                b[b.length] = a[i]
+            }
+        }
+        return b
+    }
+            //console.log(New(a));
+    //使用while做除重 (while 版本)
+            //console.log(a);
+    var i = 0, j = 0
+    while (i < a.length) {
+        j = 1;
+        if (a[i] != ".") {
+            while (i + j < a.length) {
+                if (a[i] === a[i + j]) {
+                    a[i + j] = "."
+                }
+                j++
+            }
+            b[b.length] = a[i]
+        }
+        i++
+    }
+            //console.log(a);
+            //console.log(b);
+
+    //对原数组直接操作
+    function New2(a) {
+        for (var i = 0; i < a.length; i++) {
+            for (var j = 1; i + j < a.length; j++) {
+                if (a[i] == a[i + j]) {
+                    a.splice(i + j, 1)
+                }
+            }
+            return a
+        }
+    }
+    New2(a)
+    console.log(New2(a));
+//数组除重 并统计每项元素出现的个数 得到新的数组
+    function New3(a) {
+        var c = []
+        var cc = {}
+        for (var i = 0; i < a.length; i++) {
+            var temp = a[i]
+            if (cc[temp] == undefined) {
+                cc[temp] = 1;
+                c.push(a[i])
+            } else {
+                cc[temp]++
+            }
+        }
+        return c
+    }
+//    数组的翻转
+    function rev(a) {
+        for (var i=0;i< a.length;i++) {
+
+        }
+    }
+    //数组的属性
+
+    //筛选元素 filter属性 , 返回值是新的数组 原数组不进行操作
+    //如果元素大于4留下来
+    var s = a.filter(function (element, index, arr) {
+        //分别对应元素, 索引, 数组
+        if (element > 4) {
+            return true;
+        }
+        return false
+    })
+    console.log(s);
+    //寻找相对应的元素的位置
+    function ser(a, arr) {
+        var index = 0;
+        var ser = [];
+        do {
+            index = arr.indexOf(a, index);//.indexof (元素,索引,数组)
+            if (index !== -1) {
+                ser[ser.length] = index
+            }
+            index++
+        } while (index !== 0)
+        return ser
+    }
+    //方式2,使用 for 循环完成
+    function ser2(a, arr) {
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] == a) {
+                ser2[ser2.length] = i;
+            }
+        }
+    }
+    console.log(ser(2, a));
+
+
+    //indexof 查找数组中的元素 返回值索引号
+    var m=a.indexOf(a[1])
+    console.log(a.indexOf(a[1]));//索引和第一个和第一项相同的元素并返回索引号  //a.indexOf(element,index,array) 对应元素第一个是需要比对的元素,第2 个是从那个索引号开始, 最后一个是对应的当前数组
+
+    //concat链接两个数组不改变原有数组
+    var c = []
+    console.log(a);
+    console.log(b);
+    c = c.concat(a, b);
+    console.log(c);
+
+    //tostring 讲数组以" , " 的方式拼接在一起
+    console.log(a.toString());
+
+    // join 对原数组的所有元素放入连在一起成为一个字符串, 可以指定相应的分隔符放在括号里去链接数组内元素
+    var str;
+    str = a.join("--")
+    console.log(str);
+
+    //pop 用于删除并返回数组的最后一个元素会改变原数组
+    console.log(a.pop());
+    console.log(a);
+    //可以单行调用 类似于
+            //a.pop
+
+    //push 用于向数组的末尾增加一个或多个元素,会改变原数组, 返回新数组的长度
+    console.log(a.push(12, 6, 78));
+    console.log(a);
+    //可以单行调用 类似于
+            //a.push( 121,12,31,231,23,132,1)
+
+    //shift 删除并返回数组的第一个元素,会改变原数组     //可以单行调用
+    console.log(a.shift());
+    console.log(a);
+
+    //unshift 向数组的第一个元素前添加一个元素或多个元素   //可以单行调用 类似于
+    console.log(a.unshift(1, 2, 3, 4, 5));
+    console.log(a);
+
+    //reverse 反转数组中的顺序, 即反转数组   //可以单行调用
+    console.log(a.reverse());
+    console.log(a);
+
+    //slice 从已有数组中找到并返回选定的元素, 对原数组不进行操 (参数1,参数2) 参数索引号,参数1开始的位置, 参数2取到的个数 不指定时到数组结束作
+    console.log(a.slice(0, 2));
+    console.log(a);
+
+    //splice 像已有数组中删除元素并返回删除的元素,同时可以在删除元素的位置添加新的元素 , (参数1,参数2,参数3)参数1 对应元素的位置-开始的位置 参数2 删除元素的数量 0不删除,参数3 向数组添加的元素
+    console.log(a.splice(0, 3, "M", "N"));
+    console.log(a);
+
+    //sort 数组排序 对原数组进行更改
+    console.log(b);
+    function Up(a, b) {
+        return a - b
+    }
+    console.log(b.sort(Up));
+    console.log(b.sort(function (a, b) {
+        return b - a
+    }));
+    console.log(b);
+
+
+    //index.封装猜猜
+    /* function (a,b) {
+     for (var i=0;i< a.length;i++) {
+     if (b[i]==a) {
+     return i
+     }
+     }
+     }*/
+
+    //统计每个数组的元素出现个数 使用引用对象将数组中的值放在对应位置
+    function ton(a) {
+        var ton={}
+        for (var i = 0; i < a.length; i++) {
+            var temp=a[i]
+            if (ton[temp]) {
+                ton[temp]++
+            } else {
+                ton[temp]=1
+            }
+        }
+        return ton
+    }
+
+</script>
+</body>
+</html>

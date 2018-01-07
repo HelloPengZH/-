@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .td {
+            height: 100px;
+            width: 100px;
+            float: left;
+            background-color: skyblue;
+            border: 2px solid #FF3040;
+        }
+
+        .tr {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div id="ninePic">
+    <div class="tr">
+        <div class="td"></div>
+        <div class="td"></div>
+        <div class="td"></div>
+    </div>
+    <div class="tr">
+        <div class="td"></div>
+        <div class="td"></div>
+        <div class="td"></div>
+    </div>
+    <div class="tr">
+        <div class="td"></div>
+        <div class="td"></div>
+        <div class="td"></div>
+    </div>
+</div>
+<script>
+    /**
+     * 原形
+     */
+    var ninePic = document.getElementById("ninePic")
+    var ninePicFlag = true
+    var trs = ninePic.children
+    for (var i = 0; i < trs.length; i++) {
+        var tds = []
+        tds[i] = trs[i].children;
+        //取到的每一个td为 tds[tr索引][每个td索引]
+        for (var j = 0; j < tds[i].length; j++) {
+            tds[i][j].ninePicFlag=true
+            tds[i][j].onmouseover = function () {
+                if ((this).ninePicFlag) {
+                    this.style.transform = "rotateY(180deg)";
+                    this.style.transition = "1s";
+                    this.style.backgroundColor = "#ff3040";
+                    //flag = false;
+                } else {
+                    this.style.transform = "rotateY(0deg)";
+                    this.style.transition = "1s";
+                    this.style.backgroundColor = "skyblue";
+                    //flag = true;
+                }
+                this.ninePicFlag = !this.ninePicFlag
+            }
+        }
+    }
+</script>
+</body>
+</html>
