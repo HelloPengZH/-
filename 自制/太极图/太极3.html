@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>gossip</title>
+</head>
+<style>
+    body {
+        width: 800px;
+        height: 800px;
+        border-radius: 50%;
+        border: 2px solid #000;
+        margin: 50px auto;
+        overflow: hidden;
+        position: relative;
+        background-color: #fff;
+    }
+    .gossip{
+        width: 50%;
+        height: 100%;
+        float: right;
+        background-color: #000;
+        border-radius: 0 400px 400px 0;
+    }
+    .gossip::before{
+        content: "";
+        width: 50px;
+        height: 50px;
+        background-color: #fff;
+        border-radius: 50%;
+        position: absolute;
+        top: 25%;
+        margin-top: -25px;
+        left: 50%;
+        margin-left: -25px;
+        box-shadow: 0 0 0 175px rgb(0, 0, 0)
+    }
+    .gossip::after{
+        content: "";
+        width: 50px;
+        height: 50px;
+        background-color: #000;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 25%;
+        margin-bottom: -25px;
+        left: 50%;
+        margin-left: -25px;
+        box-shadow: 0 0 0 175px rgb(255,255,255)
+    }
+
+</style>
+
+<body>
+<div class="gossip"></div>
+</body>
+
+</html>

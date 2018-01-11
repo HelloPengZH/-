@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 1200px;
+            height: 600px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-around;
+            flex-flow: column-reverse wrap-reverse;
+        }
+        .c1 {
+            width: 210px;
+            height: 210px;
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="c1">1</div>
+    <div class="c1">2</div>
+    <div class="c1">3</div>
+    <div class="c1">4</div>
+    <div class="c1">5</div>
+    <div class="c1">6</div>
+    <div class="c1">7</div>
+    <div class="c1">8</div>
+    <div class="c1">9</div>
+    <div class="c1">10</div>
+</div>
+<script>
+    var c1s=document.getElementsByTagName("c1")
+    for (var i = 0; i < c1s.length; i++) {
+        c1s[i].style.backgroundColor=randomColor();
+    }
+    function randomColor(color) {
+        var aa = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "a", "b", "c", "d", "e", "f"]//0-15
+        function radom() {
+            var random = Math.floor(Math.random() * 16)//0-15
+            return random
+        }
+
+        var str = "#"
+        if (color) {
+            str = "#" + color
+            for (var i = 0; i < 6 - color.length; i++) {
+                str = str + aa[radom()]
+            }
+        } else {
+            for (var i = 0; i < 6; i++) {
+                str = str + aa[radom()]
+            }
+        }
+        return str
+    }
+</script>
+</body>
+</html>

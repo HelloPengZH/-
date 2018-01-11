@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>太极图</title>
+    <style>
+        body {
+            background-color: #aaaaaa;
+        }
+        div{
+            border-radius: 50%;
+            display: block;
+            position: relative;
+            width: 200px;
+            height: 200px;
+            /*-webkit-animation:circle 1s infinite linear;!*匀速 循环*!*/
+        }
+        @-webkit-keyframes circle{
+            100%{ transform:rotate(0deg); }
+            0%{ transform:rotate(-360deg); }
+        }
+        .right , .left{
+            float: left;
+            width: 100px;
+            height: 200px;
+            background-color: #000;
+            border:1px solid #000000;
+        }
+        .right {
+            border-radius: 200px 0 0 200px;
+        }
+        .left {
+            border-radius:  0 200px   200px 0;
+            background-color: #fff;
+        }
+        .right:before {
+            content: "";
+            position: absolute;
+            top:0;
+            right: -50px;
+            height: 100px;
+            width: 50px;
+            border-radius:  0 100px   100px 0;
+            background-color: #000;
+            z-index:2;
+        }
+        .left:before {
+            content: "";
+            position: absolute;
+            bottom:0;
+            left: -50px;
+            height: 100px;
+            width: 50px;
+            border-radius:100px  0  0  100px;
+            background-color: #fff;
+            z-index:2;
+        }
+        .right:after {
+            content: '';
+            border-radius: 50%;
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            top:25%;
+            right: 0px;
+            margin-top: -15px;
+            margin-right: -15px;
+            right: 0;
+            background-color: #fff;
+            z-index:4;
+        }
+        .left:after {
+            content: '';
+            border-radius: 50%;
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            top:75%;
+            left: 0px;
+            margin-top: -15px;
+            margin-left: -15px;
+            right: 0;
+            background-color: #000;
+            z-index:4;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div class="right"></div>
+    <div class="left"></div>
+</div>
+
+</body>
+</html>

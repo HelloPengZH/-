@@ -1,0 +1,56 @@
+.section:nth-of-type(1) .logo {
+    margin: 0 auto;
+    padding-top: 7%;
+    text-align: center;
+}
+.text {
+    padding:40px 0 0 0 ;
+    text-align: center;
+}
+.text img {
+    margin:0  20px;
+    opacity:.3;
+
+    transition: margin 2s,opacity 1s;
+}
+.section:nth-of-type(1).current .text img {
+    margin: 0;
+    opacity:1;
+}
+.intro {
+    text-align: center;
+    padding-top: 20px;
+}
+/*第二个*/
+.section:nth-of-type(2) > div {
+    display: flex;
+    /*排列位置的方式*/
+    justify-content: space-around;
+    /*水平方向*/
+    align-items: center;
+}
+.section:nth-of-type(2) .shield {
+    width: 440px;
+    font-size: 0;
+    /*flex: 1;*/
+}
+.section .shield img {
+    transition: transform 1s;
+}
+.section .shield img:nth-of-type(1) {transform: translate(-45%,-92%) rotate(10deg)}
+.section .shield img:nth-of-type(2){transform: translate(24%,74%) rotate(11deg)}
+.section .shield img:nth-of-type(3){transform: translate(-37%,-56%) rotate(54deg)}
+.section .shield img:nth-of-type(4){transform: translate(23%,42%) rotate(63deg)}
+.section .shield img:nth-of-type(5){transform: translate(-76%,-14%) rotate(76deg)}
+.section .shield img:nth-of-type(6){transform: translate(97%,22%) rotate(34deg)}
+.section .shield img:nth-of-type(7){transform: translate(-24%,52%) rotate(23deg)}
+.section .shield img:nth-of-type(8){transform: translate(76%,42%) rotate(55deg)}
+.section .shield img:nth-of-type(9){transform: translate(-32%,-22%) rotate(22deg)}
+.section:nth-of-type(2) .intro {
+    height: 309px;
+    /*flex: 1;*/
+}
+.section:nth-of-type(2).current .shield img {
+    transform: none;
+}
+/*第三屏相对定位固定位置*/

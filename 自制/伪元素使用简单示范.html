@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div:nth-of-type(1) {
+            width: 200px;
+            height: 100px;
+            background-color: indianred;
+            position: relative;
+            float: left;
+        }
+        div:nth-of-type(2) {
+            height: 100px;
+            width: 50px;
+            background-color: cornflowerblue;
+            float: left;
+            position: relative;
+
+        }
+        div:nth-of-type(2):before {
+            content: '';
+            position: absolute;
+            padding: 0;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 50%;
+            top: 0;
+            left: -5px;
+            margin-top: -5px;
+        }
+        div:nth-of-type(2):after {
+            content: '';
+            position: absolute;
+            padding: 0;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 50%;
+            bottom: 0;
+            left: -5px;
+            margin-bottom: -5px;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<div></div>
+</body>
+</html>

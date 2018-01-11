@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .clock {
+            width: 500px;
+            height: 500px;
+            border: 10px solid #7b7b7b;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .dial {
+            width: 4px;
+            height: 102%;
+            position: absolute;
+            left: 50%;
+            /*top:50%;*/
+            /*transform: ;*/
+            background-color: #7b7b7b;
+        }
+
+        .cover {
+            width: 90%;
+            height: 90%;
+            background-color: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            border-radius: 50%;
+        }
+
+        .hour {
+            width: 7px;
+            height: 30%;
+            border-radius: 10px;
+
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -100%);
+            background-color: #0e00ff;
+            z-index: 4;
+            transform-origin: bottom center;
+            animation: clockAnimation 43200s infinite linear;
+        }
+
+        .min {
+            border-radius: 10px;
+
+            width: 5px;
+            height: 40%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -100%);
+            background-color: #ff741e;
+            z-index: 4;
+            transform-origin: bottom center;
+            animation: clockAnimation 3600s infinite linear;
+        }
+
+        .second {
+            border-radius: 10px;
+
+            width: 2px;
+            height: 48%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -100%);
+            background-color: #141420;
+            z-index: 4;
+            /*transform-origin: center bottom;*/
+            animation: clockAnimation 60s infinite linear;
+            transform-origin: bottom center;
+        }
+
+        @keyframes clockAnimation {
+            0% {
+                transform: translate(-50%, -100%) rotate(0deg)
+            }
+            100% {
+                transform: translate(-50%, -100%) rotate(360deg);
+            }
+        }
+
+        .dott {
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #b1aac8;
+            z-index: 4;
+            opacity: .6;
+        }
+    </style>
+    <script src="../jquery-1.12.2.js"></script>
+</head>
+<body>
+<div class="clock">
+    <div class="hour"></div>
+    <div class="min"></div>
+    <div class="second"></div>
+    <div class="cover"></div>
+    <div class="dott"></div>
+</div>
+
+<script>
+    //    表盘每个刻度6度
+    var clock = $(".clock")[0]
+//    console.log(clock);
+    //    刻度函数
+    dial(clock, 60, 6, 3)
+    dial(clock, 60, 30, 6)
+
+
+    function dial(obj, much, each, width, color) {
+        for (var i = 0; i < much; i++) {
+            var dial = document.createElement("div");
+            dial.className = "dial"
+            dial.style.width = width + "px"
+            if (color) {
+                dial.style.color = color
+            }
+            dial.style.transform = "translate(-50%, 0) rotate(" + each * i + "deg)"
+            obj.appendChild(dial)
+            $(obj).append(dial)
+        }
+    }
+    /*    function dial(obj,much,josn) {
+     for (var i = 0; i < much; i++) {
+     var dial = document.createElement("div");
+     $(dial).css(josn)
+     dial.className = "dial"
+     dial.style.transform = "translate(-50%, 0) rotate(" + 6 * i + "deg)"
+     obj.appendChild(dial)
+     //            $(obj).append(dial)
+     }
+     }*/
+
+</script>
+</body>
+</html>

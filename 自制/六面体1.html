@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            /*position: absolute;*/
+            /*top: 50%;*/
+            /*left: 50%;*/
+            /*overflow: hidden;*/
+            width: 200px;
+            height: 200px;
+            margin: 300px;
+
+            transform: translate(-50%,-50%) rotate3d(-5,0,-1,30deg);
+            transform-style: preserve-3d;
+            /*animation: cricle 200s linear infinite ;*/
+            transform-origin: center ;
+        }
+        .sides {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+        }
+        .sides:nth-of-type(1){
+            transform: rotateY(0deg) translateZ(000px) ;
+        }
+        .sides:nth-of-type(2){   transform: rotateY(60deg) translateZ(300px) ;}
+        .sides:nth-of-type(3){   transform: rotateY(120deg) translateZ(300px) ;}
+        .sides:nth-of-type(4){   transform: rotateY(180deg) translateZ(300px) ;}
+        .sides:nth-of-type(5){   transform: rotateY(240deg) translateZ(300px) ;}
+        .sides:nth-of-type(6){   transform: rotateY(300deg) translateZ(300px) ;}
+        .sides:nth-of-type(7){   transform: rotateY(360deg) translateZ(300px) ;}
+        @keyframes cricle {
+            0%{
+                transform: translate(-50%,-50%) rotate3d(-5,20,-1,30deg) rotateY(0deg);
+            }
+            100%{
+                transform: translate(-50%,-50%) rotate3d(-5,20,-1,30deg) rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="sides"></div>
+    <div class="sides"></div>
+    <div class="sides"></div>
+    <div class="sides"></div>
+    <div class="sides"></div>
+    <div class="sides"></div>
+    <div class="sides"></div>
+    <div class="sides"></div>
+</div>
+<script>
+    var sides=document.getElementsByClassName("sides")
+    console.log(sides);
+    for (var i = 0; i < sides.length; i++) {
+        sides[i].style.backgroundColor=randomColor()
+    }
+    function randomColor(color) {
+        var aa = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "a", "b", "c", "d", "e", "f"]//0-15
+        function radom() {
+            var random = Math.floor(Math.random() * 16)//0-15
+            return random
+        }
+
+        var str = "#"
+        if (color) {
+            str = "#" + color
+            for (var i = 0; i < 6 - color.length; i++) {
+                str = str + aa[radom()]
+            }
+        } else {
+            for (var i = 0; i < 6; i++) {
+                str = str + aa[radom()]
+            }
+        }
+        return str
+    }
+
+</script>
+</body>
+</html>

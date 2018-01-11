@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-color: #eeeeee;
+        }
+        div {
+            height: 200px;
+            width: 100px;
+            background-color: #fff;
+            border: 1px solid #000000;
+            border-right:100px solid #000000;
+            border-radius: 50%;
+            position: absolute;
+            -webkit-animation:circle 6s infinite linear;/*匀速 循环*/
+        }
+        @-webkit-keyframes circle{
+            100%{ transform:rotate(0deg); }
+            0%{ transform:rotate(360deg); }
+        }
+        div:before {
+            content: '';
+            position: absolute;
+            height: 40px;
+            width: 40px;
+            background-color: #fff;
+            border: 30px solid #000000;
+            border-radius: 50%;
+            top: 0;
+            right: 0;
+            margin-right: -50px;
+        }
+        div:after {
+            content: '';
+            position: absolute;
+            height: 40px;
+            width: 40px;
+            background-color: #000;
+            border: 30px solid #ffffff;
+            border-radius: 50%;
+            bottom: 0;
+            right: 0;
+            margin-right: -50px;
+        }
+
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

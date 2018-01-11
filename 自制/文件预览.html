@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-1.12.2.js"></script>
+</head>
+<body>
+<form action="javascript:alert('提交')">
+    文件： <input type="file" name="myFile" id="fileDoc" onchange="getFileContent();"> <br>
+    <div></div>
+    <input type="submit">
+   <div id="imgBox">
+       <img src="" alt="">
+   </div>
+</form>
+
+<script>
+//    console.log($("#fileDoc")[0].file);
+//    var filesInLacol=$("#myFile")[0].file
+//var filesInLacol=document.querySelector()
+    function getFileContent() {
+
+        var filesInLacol=document.querySelector("#fileDoc").files
+
+        var reader=new FileReader()
+
+        console.log(reader);
+
+        reader.readAsDataURL(filesInLacol[0])
+
+        reader.onload= function () {
+//           $("img").attr({"src":reader.result+""})
+            console.log(document.querySelector("img"));
+            document.querySelector("img").src=reader.result;
+       }
+        reader.onprogress=function(e){
+            var percent= e.loaded/ e.total*100+"%";
+//            宽度设置
+            imgBox.style.width=percent;
+        }
+    }
+</script>
+<!--<script>
+//使用 jquery
+    var div=document.querySelector("div");
+
+    function getFileContent(){
+
+        var reader=new FileReader();
+
+//        var file=document.querySelector("#myFile").files;
+        var file=$("#myFile")[0].files;
+        console.log(document.querySelector("#myFile"));
+//        var file1=document.getElementById("#myFile");
+        var file1=document.getElementById("#myFile");
+        console.log(file);
+        console.log(file1);
+        reader.readAsDataURL(file[0]);
+
+        reader.onload=function(){
+            //console.log(reader.result);
+
+            document.querySelector("img").src=reader.result;
+        }
+        reader.onprogress=function(e){
+            var percent= e.loaded/ e.total*100+"%";
+            div.style.width=percent;
+        }
+    }
+</script>-->
+</body>
+</html>

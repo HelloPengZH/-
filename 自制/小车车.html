@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img {
+            width: 200px;
+        }
+        .car {
+            display: inline-block;
+            animation-name: smallCar;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-fill-mode: forwards;
+            animation-timing-function: linear;
+
+        }
+        @keyframes smallCar {
+            0%{
+                transform: none;
+            }
+            45%{
+                transform: translateX(1000px) ;
+            }
+            50% {
+                transform: translateX(1000px) rotateY(180deg);
+            }
+            95%{
+                transform: translateX(0px) rotateY(180deg);
+            }
+            100%{
+
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="car">
+    <img src="../H5C3作业/car.jpg" alt="">
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .layput {
+            width: 800px;
+            height: 600px;
+            margin: 0 auto;
+            display: flex;
+            /*justify-content: ;*/
+            flex-flow: column;
+        }
+        header {
+            width: 100%;
+            height: 60px;
+            /*flex: 1;*/
+            background-color: grey;
+        }
+        footer {
+            width: 100%;
+            height: 80px;
+            background-color: brown ;
+        }
+        main     {
+            width: 100%;
+            flex: 1;
+            background-color: #FF3040;
+            display: flex;
+            /*属性失效*/
+            /*justify-content: flex-end;*/
+
+        }
+        article {
+            height: 100%;
+            flex: 1;
+            background-color: deepskyblue;
+        }
+        aside {
+
+            height: 100%;
+            background-color: #ff191f;
+            flex: 3;
+        }
+    </style>
+</head>
+<body>
+<div class="layput">
+    <header></header>
+    <main>
+        <article>111</article>
+        <aside>222</aside>
+    </main>
+    <footer></footer>
+</div>
+</body>
+</html>
